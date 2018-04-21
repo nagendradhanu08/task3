@@ -1,0 +1,41 @@
+<!-- MAIN COMPONENT STARTS  -->
+<section class="d-flex h-100">
+
+  <!--white container start here-->
+  <section class="white-left-container">
+    <!-- Add new Role Button starts-->
+    <div class="d-flex justify-content-center border-bottom-container">
+      <button type="button" title="Add Role" (click)="showModal()" class="btn-transparent">New Role</button>
+    </div>
+    <!-- Add new Role Button ends -->
+
+    <!-- List Component start -->
+    <authority-role-list #roleList (selectedRole)="roleEdit.onRoleSelect($event)"></authority-role-list>
+    <!-- List component ends -->
+  </section>
+  <!--white container end here-->
+
+  <!-- gray container starts here -->
+  <section class="right-container w-100">
+
+    <!-- Breadcrumb starts -->
+    <header>
+      <div class="header-text">{{ roleEdit.role?.Name }}</div>
+      
+      <ul class="breadcrumb">
+        <li>
+          <a>Roles</a>
+        </li>
+        <li class="active-item">
+          <a>Edit</a>
+        </li>
+      </ul>
+    </header>
+    <!-- Breadcrumb ends -->
+
+    <authority-role-edit #roleEdit (updatedRole)="roleList.onRoleUpdate($event)" (deletedRole)="roleList.onRoleDelete($event)"></authority-role-edit>
+  </section>
+  <!-- gray container ends here -->
+
+</section>
+<!-- MAIN COMPONENT ENDS -->

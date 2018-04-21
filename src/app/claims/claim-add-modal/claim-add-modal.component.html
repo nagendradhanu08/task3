@@ -1,0 +1,52 @@
+<form class="claim-popup-box" [formGroup]="claimForm" (ngSubmit)="addClaim()">
+  <div class="modal-header">
+    <h4 class="modal-title">New Claim</h4>
+    <button type="button" class="close" data-dismiss="modal" title="Close" (click)="modalRef.hide()">&times;</button>
+  </div>
+  <div class="modal-body">
+    <div class="d-flex flex-wrap">
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12 no-padding form-p-r">
+            <div class="head-text">
+                Type
+            </div>
+            <div class="form-select">
+                <select name="" id="" formControlName="Type">
+                    <option [value]="null" disabled>Select Type</option>
+                    <option  id="{{type.id}}" *ngFor="let type of Types">{{type.name}}</option>  
+                </select>
+            </div>
+            <div class="head-text m-t15px">
+                Description
+            </div>
+            <div>
+                <textarea id="" formControlName="Description" class="form-textarea"></textarea>
+            </div>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12 no-padding form-p-l">
+            <div class="head-text">
+                Name
+            </div>
+            <div>
+                <input type="text" value="" formControlName="Name" class="form-input">
+            </div>
+            <div class="head-text m-t15px">
+                Required Claim
+            </div>
+            <div class="d-flex radio-box">
+                <div>
+                    <input type="radio" id="demo1"  class="blue-radio-btn" [value]="true" formControlName="IsRequired" name="IsRequired"   [(ngModel)]='IsRequired'/>
+                    <label for="demo1">Yes</label>
+                </div>
+                <div class="p-l25px">
+                    <input type="radio" id="demo2"  class="blue-radio-btn" [value]="false" formControlName="IsRequired" name="IsRequired"  [(ngModel)]='IsRequired' />
+                    <label for="demo2">No</label>
+                </div>
+            </div>
+        </div>
+    </div>  
+  </div>
+  <div class="modal-footer">
+    <button type="button" (click)="cancelAdd();modalRef.hide()" class="btn-popup-transparent" data-dismiss="modal" title="Cancel">Cancel</button>
+    <button type="submit" class="btn-green" title="Add">Add</button>
+  </div>
+</form>

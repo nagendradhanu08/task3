@@ -1,0 +1,13 @@
+<header class="d-flex justify-content-between w-100 header-container align-items-center">
+  <div class="logo">
+    <a href="">
+      <img src="assets/images/1authority.png" alt="1authority" title="1Authority">
+    </a>
+  </div>
+  <div class="d-flex align-items-center">
+    <div class="icon-login-user" title="User"></div>
+    <div class="login-text">{{ userData?.preferred_username }}</div>
+    <div class="icon-settings" title=""></div>
+    <div class="icon-logout" title="Logout" (click)="logout()"></div>
+  </div>
+</header>

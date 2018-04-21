@@ -1,0 +1,59 @@
+<!-- <h4>There are no details to view.</h4> -->
+
+<!-- Edit Section starts -->
+<form [formGroup]="claimForm" (ngSubmit)="updateClaim()">
+    <section class="middle-container">
+        <section class="white-right-container d-flex">
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12 no-padding form-p-r">
+                <div class="head-text">
+                    Type
+                </div>
+                <div class="form-select">
+                    <select name="" formControlName="Type" id="">
+                        <option [value]="null" disabled>Select Type</option>
+                        <option id="{{type.id}}" *ngFor="let type of Types">{{type.name}}</option>
+                    </select>
+                </div>
+                <div class="head-text m-t15px">
+                    Description
+                </div>
+                <div>
+                    <textarea id="" formControlName="Description" class="form-textarea"></textarea>
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12 no-padding form-p-l">
+                <div class="head-text">
+                    Name
+                </div>
+                <div>
+                    <input type="text" formControlName="Name" class="form-input">
+                </div>
+                <div class="head-text m-t15px">
+                    Required Claim
+                </div>
+                <div class="d-flex radio-box">
+                    <div>
+                        <input type="radio" id="demo1" [value]="true" formControlName="IsRequired" name="IsRequired" class="blue-radio-btn" [(ngModel)]='IsRequired'
+                        />
+                        <label for="demo1">Yes</label>
+                    </div>
+                    <div class="p-l25px">
+                        <input type="radio" id="demo2" [value]="false" formControlName="IsRequired" name="IsRequired" class="blue-radio-btn" [(ngModel)]='IsRequired'
+                        />
+                        <label for="demo2">No</label>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+    <!-- Edit section ends -->
+
+    <!-- <Footer buttons section starts -->
+    <footer class="footer-container">
+        <section class="footer-btn-container d-flex justify-content-between">
+            <button type="button" class="btn-pink" title="Delete" (click)="deleteClaim()">delete</button>
+            <button type="submit" class="btn-green" title="Save">save</button>
+        </section>
+    </footer>
+</form>
+<!-- Footer buttons section ends -->

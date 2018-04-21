@@ -9,7 +9,17 @@
       "outDir": "dist",
       "assets": [
         "assets",
-        "favicon.ico"
+        "favicon.ico",
+        {
+          "glob": "signin-callback.html",
+          "input": "./",
+          "output": "./"
+        },
+        {
+          "glob": "silent-renew.html",
+          "input": "./",
+          "output": "./"
+        }
       ],
       "index": "index.html",
       "main": "main.ts",
@@ -19,9 +29,16 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "authority",
       "styles": [
-        "styles.sass"
+        "../node_modules/bootstrap/dist/css/bootstrap.min.css",
+        "../node_modules/ngx-toastr/toastr.css",
+        "assets/sass/styles.sass"
       ],
-      "scripts": [],
+      "scripts": [
+        "assets/jquery/jquery-min.js",
+        "assets/jquery/popper.js",
+        "assets/jquery/bootstrap.min.js",
+        "assets/jquery/jquery-1.12.0.min.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",

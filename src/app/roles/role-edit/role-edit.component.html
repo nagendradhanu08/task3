@@ -1,0 +1,31 @@
+<!-- <h4>There are no details to view.</h4> -->
+
+<!-- Edit Section starts -->
+<form [formGroup]="roleForm" (ngSubmit)="updateRole()">
+  <section class="middle-container">
+    <section class="white-right-container">
+      <div class="head-text">
+        Name
+      </div>
+      <div>
+        <input type="text" formControlName="Name" class="form-input" >
+      </div>
+      <div class="head-text m-t15px">
+        Description
+      </div>
+      <div>
+        <textarea id="" formControlName="Description" class="form-textarea"></textarea>
+      </div>
+    </section>
+  </section>
+  <!-- Edit section ends -->
+
+  <!-- <Footer buttons section starts -->
+  <footer class="footer-container">
+    <section class="footer-btn-container d-flex justify-content-between">
+      <button type="button" class="btn-pink" title="Delete" (click)="deleteRole()">delete</button>
+      <button type="submit" class="btn-green" title="Save">save</button>
+    </section>
+  </footer>
+</form>
+<!-- Footer buttons section ends -->

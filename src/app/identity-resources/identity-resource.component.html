@@ -1,0 +1,41 @@
+<!-- MAIN COMPONENT STARTS  -->
+<section class="d-flex h-100">
+
+  <!--white container start here-->
+  <section class="white-left-container">
+    <!-- Add new Identity Resource Button starts-->
+    <div class="d-flex justify-content-center border-bottom-container">
+      <button type="button" title="Add Identity Resource" (click)="showModal()" class="btn-transparent">Add Identity Resource</button>
+    </div>
+    <!-- Add new Identity Resource Button ends -->
+
+    <!-- List Component start -->
+    <authority-identity-resource-list #identityResourceList (selectedIdentityResource)="identityResourceEdit.onIdentityResourceEditSelect($event)"></authority-identity-resource-list>
+    <!-- List component ends -->
+  </section>
+  <!--white container end here-->
+
+  <!-- gray container starts here -->
+  <section class="right-container w-100">
+
+    <!-- Breadcrumb starts -->
+    <header>
+      <div class="header-text">{{ identityResourceEdit.identityResource?.Name }}</div>
+
+      <ul class="breadcrumb">
+        <li>
+          <a>Identity Resources</a>
+        </li>
+        <li class="active-item">
+          <a>Edit</a>
+        </li>
+      </ul>
+    </header>
+    <!-- Breadcrumb ends -->
+
+    <authority-identity-resource-edit #identityResourceEdit (updatedRole)="identityResourceList.onRoleUpdate($event)" (deletedRole)="identityResourceList.onRoleDelete($event)"></authority-identity-resource-edit>
+  </section>
+  <!-- gray container ends here -->
+
+</section>
+<!-- MAIN COMPONENT ENDS -->

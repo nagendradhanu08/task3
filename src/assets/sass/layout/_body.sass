@@ -1,0 +1,516 @@
+.shadow-container
+  +border-radius(4px, 4px, 4px, 4px)
+  background-color: $clr-light1
+  position: absolute
+  z-index: 2
+  top: 95px
+  left: 30px
+  right: 30px
+  bottom: 30px
+  box-shadow: 5px 5px 4px 0 rgba(136, 136, 136, 0.25098039215686274)
+
+.white-left-container
+  min-width: 320px
+  height: 100%
+  background-color: $clr-white
+.relative-container
+  position: relative
+  height: 100%
+  //bottom: 153px
+.absolute-container
+  position: absolute
+  top: 0
+  bottom: 0
+  right: 0
+  left: 0
+  overflow-y: auto
+  -webkit-height: calc(100% - 153px)
+  -moz-height: calc(100% - 153px)
+  -ms-height: calc(100% - 153px)
+  height: calc(100% - 153px)
+  .border-bottom-container
+    cursor: pointer
+
+.border-bottom-container
+  border-bottom: 1px solid $clr-border
+  padding: 20px 20px
+.left-container-border
+  border-bottom: 1px solid $clr-border
+  padding: 20px 20px 20px 0
+  cursor: pointer
+  &.container-active
+    background-color: $clr-light3
+    border-left: 4px solid $clr-blue
+    .p-l20px
+      padding-left: 16px
+    //.icon-container
+      background-color: red
+
+.search-input
+  +border-radius(4px, 4px, 4px, 4px)
+  border: 1px solid $clr-border
+  min-height: 35px
+  width: 100%
+  color: $clr-dark-blue1
+  font-size: 14px
+  padding: 7px 10px 5px 35px
+
+.text-container
+  padding-left: 15px
+.black-text16px
+  color: $clr-black
+  font-size: 16px
+  font-family: 'poppinssemibold'
+  text-transform: capitalize
+.black-text12px
+  @extend .black-text16px
+  font-size: 12px
+  text-transform: none
+
+.icon-container
+  +border-radius(4px, 4px, 4px, 4px)
+  width: 40px
+  height: 40px
+  border: 1px solid $clr-border
+  background-color: $clr-light4
+
+.right-container
+  padding: 20px 20px
+  width: 100%
+  position: relative
+
+.middle-container
+  position: absolute
+  overflow-y: auto
+  width: 100%
+  height: 80%
+  left: 0
+  right: 0
+.white-right-container
+  border: 1px solid $clr-border
+  +border-radius(4px, 4px, 4px, 4px)
+  background-color: $clr-white
+  padding: 30px 30px
+  margin: 0 20px
+.header-text
+  font-size: 25px
+  font-family: 'poppinssemibold'
+  color: $clr-dark-blue1
+
+.head-text
+  font-family: 'poppinssemibold'
+  color: $clr-dark-blue1
+  font-size: 16px
+.form-input
+  width: 100%
+  border: 1px solid $clr-border
+  min-height: 40px
+  padding: 10px 10px
+  +border-radius(4px, 4px, 4px, 4px)
+  font-size: 15px
+  font-family: 'poppinsregular'
+  color: $clr-dark-blue1
+  margin-top: 10px
+  &.client-input
+    padding: 10px 50px 10px 10px
+.file-container
+  border: 1px solid $clr-border
+  +border-radius(4px, 4px, 4px, 4px)
+  padding: 5px 5px
+
+  .custom-file-upload
+    border: 1px solid $clr-border
+    cursor: pointer
+    font-size: 13px
+    background-color: $clr-light1
+    color: $clr-black
+    padding: 5px 10px
+    display: inline-block
+    +border-radius(4px, 4px, 4px, 4px)
+    margin-top: 0
+.form-control
+  &:focus
+    color: $clr-dark-blue1
+    background-color: $clr-white
+    border-color: $clr-border
+    outline: 0
+    box-shadow: none
+  .multiple-input
+    font-size: 15px
+    font-family: 'poppinsregular'
+    color: $clr-dark-blue1
+.input-group-text
+  width: 22px
+  height: 22px
+  background-image: url('../images/sprite.png')
+  background-repeat: no-repeat
+  background-position: -597px -25px
+  background-color: green
+.form-textarea
+  @extend .form-input
+  min-height: 100px
+  resize: none
+.identity-textarea
+  @extend .form-textarea
+  min-height: 230px
+.client-textarea
+  @extend .form-textarea
+  min-height: 223px
+.form-p-l
+  padding-left: 13px
+.form-p-r
+  padding-right: 13px
+
+.tab-right-container
+  @extend .white-right-container
+  padding: 0
+  .nav-tabs
+    border-bottom: 1px solid $clr-border
+    background-color: $clr-light5
+  .nav-link
+    padding: 10px 30px
+    color: $clr-gray
+    font-size: 15px
+    font-family: poppinssemibold
+  .nav-tabs .nav-link
+    border-top-left-radius: 0
+    border-top-right-radius: 0
+  .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link:hover
+    border-color: transparent
+    border-bottom: 3px solid $clr-blue
+    color: $clr-dark-blue1
+    background-color: $clr-light5
+  .tab-content
+    padding: 20px 20px
+    &.tab-details-container
+      padding: 20px 0
+      .icon-plus-container
+         width: 45px
+         height: 45px
+         background-color: $clr-green
+         margin-top: 10px
+         +border-radius(4px, 4px, 4px, 4px)
+  .icon-tab-delete 
+    .icon-delete
+      position: absolute
+      right: 20px
+      top: 13px
+
+.light-bg-background
+  border: 1px solid $clr-border
+  background-color: $clr-light5
+  +border-radius(4px, 4px, 4px, 4px)
+  padding: 15px 15px
+  margin-bottom: 15px
+  min-height: 120px
+
+.content-center-text
+  font-size: 14px
+  text-align: center
+  color: $clr-gray
+  font-family: poppinsmedium
+
+.head-text15px
+  font-size: 15px
+  color: $clr-dark-blue1
+  font-family: poppinssemibold
+
+.frm-checkbox
+  position: relative
+  border: 1px solid $clr-border
+  min-width: 400px
+  min-height: 350px
+  +border-radius(4px, 4px, 4px, 4px)
+.container-checkbox
+  position: absolute
+  left: 0
+  right: 0
+  overflow-y: scroll
+  height: 306px
+  padding: 20px 20px
+  &.right-checkbox-container
+    height: 250px
+.box-head-text
+  text-align: center
+  color: $clr-dark-blue1
+  font-size: 15px
+  font-family: poppinssemibold
+  padding: 10px 10px
+  background-color: $clr-light1
+.gray-text-hide
+  font-size: 12px
+  font-family: poppinsregular
+  color: $clr-gray
+  margin: -5px 0 10px 30px
+  text-transform: capitalize
+
+.btn-container
+  background-color: $clr-light-blue
+  +border-radius(4px, 4px, 4px, 4px)
+  padding: 5px 10px
+  min-width: 80px
+  margin-bottom: 10px
+  cursor: pointer
+
+.client-nav-pills
+  .nav-pills
+    border-bottom: 1px solid $clr-border
+    padding-bottom: 20px
+  .nav-link
+    font-size: 16px
+    color: $clr-gray
+    font-family: poppinsmedium
+    border: 1px solid $clr-border
+    padding: 10px 15px
+  .nav-pills .nav-link.active, .nav-pills .show>.nav-link
+    background-color: $clr-blue
+    border: 1px solid $clr-blue
+  .border-bottom-container
+    padding: 10px 10px
+  .icon-search
+    left: 20px
+    top: 18px
+
+.client-table
+  height: 20em
+  table
+    display: flex
+    flex-flow: column
+    height: 100%
+    width: 100%
+    border: 1px solid $clr-border
+    margin: 15px 0 0 0
+    +border-radius(4px, 4px, 4px, 4px)
+  table thead
+    flex: 0 0 auto
+    width: calc(100% - 17px)
+    tr
+      border-bottom: 1px solid $clr-border
+    th
+      text-align: center
+      padding: 10px 15px
+      color: $clr-dark-blue1
+      font-family: poppinssemibold
+      font-size: 16px
+    th:nth-child(1)
+      text-align: left
+      width: 480px
+  table tbody
+    flex: 1 1 auto
+    display: block
+    overflow-y: auto
+  table tbody tr
+    width: 100%
+    border-bottom: 1px solid $clr-border
+    &:nth-child(odd)
+      background-color: $clr-light5
+    &:nth-child(even)
+      background-color: $clr-white
+    &:last-child
+      border-bottom: none
+    td
+      text-align: center
+      padding: 10px 15px
+      font-size: 13px
+      font-family: poppinsmedium
+      color: $clr-gray
+    td:nth-child(1)
+      text-align: left
+      width: 480px
+  table thead,
+  table tbody tr
+    display: table
+    table-layout: fixed
+
+
+.claims-table
+  height: 10em
+  table
+    display: flex
+    flex-flow: column
+    height: 100%
+    width: 100%
+    border: 1px solid $clr-border
+    margin: 15px 0 0 0
+    +border-radius(4px, 4px, 4px, 4px)
+  table thead
+    flex: 0 0 auto
+    width: calc(100% - 17px)
+    tr
+      border-bottom: 1px solid $clr-border
+    th
+      padding: 10px 15px
+      color: $clr-dark-blue1
+      font-family: poppinssemibold
+      font-size: 16px
+      &:last-child
+        width: 70px
+        text-align: center
+  table tbody
+    flex: 1 1 auto
+    display: block
+    overflow-y: scroll
+  table tbody tr
+    width: 100%
+    border-bottom: 1px solid $clr-border
+    &:nth-child(odd)
+      background-color: $clr-light5
+    &:nth-child(even)
+      background-color: $clr-white
+    &:last-child
+      border-bottom: none
+    td
+      padding: 10px 15px
+      font-size: 13px
+      font-family: poppinsmedium
+      color: $clr-gray
+      text-transform: capitalize
+      &:last-child
+        width: 70px
+        text-align: center
+  table thead,
+  table tbody tr
+    display: table
+    table-layout: fixed
+.plus-container
+  position: absolute
+  right: 1px
+  width: 45px
+  background-color: $clr-green
+  height: 42px
+  top: 11px
+  +border-radius(0, 4px, 4px, 0)
+
+.accordion-container
+  margin-top: 20px
+  .card-header
+    border-bottom: none
+    font-size: 16px
+    font-family: poppinssemibold
+    color: $clr-black
+  .card
+    border-top: 1px solid $clr-border
+    border-left: 1px solid $clr-border
+    border-right: 1px solid $clr-border
+    border-bottom: none
+  .card-body
+    padding: 0
+  .protected-resources-tab
+    .tab-content
+      background-color: $clr-light5
+    .light-bg-background
+      min-height: 95px
+    .border-bottom-container
+      padding: 10px 10px
+    .icon-search
+      left: 20px
+      top: 18px
+    .left-container
+      height: 250px
+
+.protected-table
+  height: 15em
+  table
+    display: flex
+    flex-flow: column
+    height: 100%
+    width: 100%
+    border: 1px solid $clr-border
+    margin: 15px 0 0 0
+    +border-radius(4px, 4px, 4px, 4px)
+  table thead
+    flex: 0 0 auto
+    width: calc(100% - 17px)
+    tr
+      border-bottom: 1px solid $clr-border
+    th
+      padding: 10px 15px
+      color: $clr-dark-blue1
+      font-family: poppinssemibold
+      font-size: 16px
+      &:last-child
+        width: 70px
+        text-align: center
+  table tbody
+    flex: 1 1 auto
+    display: block
+    overflow-y: scroll
+  table tbody tr
+    width: 100%
+    border-bottom: 1px solid $clr-border
+    &:nth-child(odd)
+      background-color: $clr-light5
+    &:nth-child(even)
+      background-color: $clr-white
+    &:last-child
+      border-bottom: none
+    td
+      padding: 10px 15px
+      font-size: 13px
+      font-family: poppinsmedium
+      color: $clr-gray
+      text-transform: capitalize
+      &:last-child
+        width: 70px
+        text-align: center
+  table thead,
+  table tbody tr
+    display: table
+    table-layout: fixed
+
+.user-tabs
+  .border-bottom-container
+    padding: 10px 10px
+  .icon-search
+    left: 20px
+    top: 20px
+  .icon-plus-container
+    width: 45px
+    height: 45px
+    +border-radius(4px, 4px, 4px, 4px)
+    background-color: $clr-green
+    margin: 9px 0 0 10px
+  .claims-table
+    height: 11em
+  .icon-plus
+    right: 8px
+    margin-top: 13px
+
+.configuration-box
+  +border-radius(4px, 4px, 4px, 4px)
+  border: 1px solid $clr-border
+  .box-header
+    padding: 10px 15px
+    background-color: $clr-light1
+    border-bottom: 1px solid $clr-border
+  .header-box-text
+    color: $clr-dark-blue1
+    font-size: 16px
+    font-family: poppinssemibold
+  .configuration-box-body
+    padding: 15px 15px
+  .length-text
+    font-size: 14px
+    font-family: poppinsmedium
+    color: $clr-dark-blue1
+  .length-box
+    width: 35px
+    height: 35px
+    border: 1px solid $clr-border
+    +border-radius(4px, 4px, 4px, 4px)
+    margin: 0 10px
+    font-size: 15px
+    font-family: poppinsregular
+    color: $clr-dark-blue1
+  .btn-group
+    border: 1px solid $clr-border
+    +border-radius(4px, 4px, 4px, 4px)
+  .btn-white
+    background-color: $clr-white
+    color: $clr-dark-blue1
+    font-size: 13px
+    font-family: poppinsmedium
+  .btn-blue
+    @extend .btn-white
+    background-color: $clr-blue
+    color: $clr-white

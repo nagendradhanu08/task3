@@ -1,0 +1,212 @@
+
+.margin-auto
+  margin: 0 auto
+//breadcrumb
+ul.breadcrumb
+  padding: 5px 0 10px 0
+  list-style: none
+  background-color: $clr-transparent
+
+ul.breadcrumb li
+  display: inline
+  font-size: 15px
+
+ul.breadcrumb li+li:before
+  padding: 8px
+  color: $clr-gray
+  content: "/\00a0"
+
+ul.breadcrumb li a
+  color: $clr-gray
+  text-decoration: none
+
+ul.breadcrumb li.active-item
+  color: $clr-blue
+  text-decoration: none
+  font-family: poppinsmedium
+
+//buttons
+.btn-transparent
+  +border-radius(4px, 4px, 4px, 4px)
+  background-color: $clr-light2
+  border: 1px solid $clr-border
+  font-size: 15px
+  color: $clr-dark-blue1
+  padding: 6px 40px
+  cursor: pointer
+  font-family: 'poppinsmedium'
+.btn-popup-transparent
+  @extend .btn-transparent
+  padding: 5px 20px
+  min-width: 100px
+.btn-pink
+  padding: 10px 30px
+  font-size: 16px
+  font-family: poppinssemibold
+  color: $clr-white
+  +border-radius(4px, 4px, 4px, 4px)
+  background-color: $clr-pink
+  text-transform: capitalize
+  border: none
+  letter-spacing: 0.5px
+  cursor: pointer
+.btn-green
+  @extend .btn-pink
+  background-color: $clr-green
+.btn-gray
+  @extend .btn-pink
+  background-color: $clr-dark-blue1
+//common padding margin class
+.no-padding
+  padding-right: 0
+  padding-left: 0
+.margin-t-b-30px
+  margin: 30px 0
+.m-r5px
+  margin-right: 5px
+.m-l10px
+  margin-left: 10px
+.m-t10px
+  margin-top: 10px
+.m-b10px
+  margin-bottom: 10px
+.m-t15px
+  margin-top: 15px
+.m-t25px
+  margin-top: 25px
+.m-t35px
+  margin-top: 35px
+.p-l25px
+  padding-left: 25px
+.p-l20px
+  padding-left: 20px
+input[type="file"]
+  display: none
+.custom-file-upload
+  border: 1px solid $clr-blue
+  cursor: pointer
+  font-size: 13px
+  background-color: $clr-blue
+  color: $clr-white
+  padding: 8px 10px
+  display: inline-block
+  +border-radius(4px, 4px, 4px, 4px)
+  margin-top: 15px
+.file-text
+  font-size: 14px
+  color: $clr-dark-blue1
+  font-family: poppinsmedium
+//radio button
+input[type=radio]
+  cursor: pointer
+  -webkit-appearance: none
+  -moz-appearance: none
+  appearance: none
+
+.blue-radio-btn
+  background-image: url('../images/sprite.png')
+  background-position: -515px 0
+  width: 18px
+  height: 18px
+  vertical-align: top
+  margin-top: 3px
+  &+label
+    font-size: 14px
+    cursor: pointer
+    line-height: 14px
+    font-family: poppinsmedium
+    padding: 0 0 0 10px
+    color: $clr-gray
+  &:checked
+    width: 18px
+    height: 18px
+    background-position: -515px -20px
+    &+label
+      color: $clr-gray
+.radio-box
+  margin: 5px 0 0 0
+  &.min-width-150px
+    min-width: 150px
+//checkbox
+input[type=checkbox]
+  -webkit-appearance: none
+  -moz-appearance: none
+  cursor: pointer
+input[type=button]
+  border: 0
+
+input[type="file"]
+  display: none
+
+.black-checkbox
+  display: none
+  & + label
+    display: inline-block
+    background-image: url("../images/sprite.png")
+    background-repeat: no-repeat
+    width: 20px
+    height: 20px
+    line-height: 18px
+    vertical-align: middle
+    background-position: -704px 0
+    font-size: 14px
+    color: $clr-gray
+    cursor: pointer
+    white-space: nowrap
+    padding-left: 30px
+    & + .label-checkbox
+      font-size: 14px
+      color: $clr-gray
+      cursor: pointer
+.black-checkbox:checked
+  & + label
+    background-position: -704px -18px
+.label-text
+  font-size: 14px
+  color: $clr-gray
+  margin-right: 10px
+  cursor: pointer
+.blue-checkbox
+  @extend .black-checkbox
+  & + label
+    color: $clr-dark-blue1
+.semibold-checkbox
+  @extend .black-checkbox
+  & + label
+    color: $clr-dark-blue1
+    font-family: poppinsmedium
+    line-height: 21px
+//select
+select
+  outline: none
+  -webkit-appearance: none
+  -moz-appearance: none
+  -ms-appearance: none
+  appearance: none
+select::-ms-expand
+  display: none
+
+.form-select
+  width: 100%
+  position: relative
+  margin-right: 15px
+  select
+    width: 100%
+    +border-radius(4px, 4px, 4px, 4px)
+    border: 1px solid $clr-border
+    color: $clr-dark-blue1
+    font-size: 14px
+    font-family: 'poppinsmedium'
+    min-width: 230px
+    min-height: 45px
+    padding: 8px 15px
+    cursor: pointer
+    margin-top: 10px
+    background-image: url('../images/arrow-down.png')
+    background-repeat: no-repeat
+    background-position: 97%
+
+.client-select
+  @extend .form-select
+  select
+    background-position: 99%

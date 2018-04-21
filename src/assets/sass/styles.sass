@@ -1,0 +1,53 @@
+@import './abstract/_variables.sass'
+@import './abstract/_global.sass'
+@import './abstract/_mixins.sass'
+@import './components/_elements.sass'
+@import './components/_icons.sass'
+@import './layout/_header.sass'
+@import './layout/_body.sass'
+@import './layout/_left-menu.sass'
+@import './layout/_popup.sass'
+@import './layout/_footer.sass'
+@import './layout/_login.sass'
+@import './layout/_consent.sass'
+@import './layout/_toastr.sass'
+@import 'responsive.sass'
+
+
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+  outline: none !important
+html,body
+  height: 100%
+.wrapper
+  position: relative
+  height: 100%
+a
+  text-decoration: none
+  color: inherit
+a
+  &:hover
+    text-decoration: none
+    color: inherit
+body
+  margin: 0
+  padding: 0
+  -webkit-font-smoothing: antialiased
+  -moz-font-smoothing: antialiased
+  -o-font-smoothing: antialiased
+  font-smoothing: antialiased
+  background-color: $clr-light
+  font-family: 'poppinsregular'
+  overflow: hidden
+
+.left-blue-part
+  min-width: 300px
+  height: 100%
+  background-color: $clr-blue
+  z-index: 1
+  position: absolute
+
+label
+  margin-bottom: 0

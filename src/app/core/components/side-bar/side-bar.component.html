@@ -1,0 +1,60 @@
+<nav class="navbar">
+  <ul class="navbar-nav">
+    <li class="nav-item" title="Dashboard">
+      <a class="nav-link" href="#">
+        <div class="d-flex justify-content-center align-items-center flex-column">
+          <div class="icon-dashboard"></div>
+          <div class="menu-text">Dashboard</div>
+        </div>
+      </a>
+    </li>
+    <li class="nav-item" title="User">
+      <a class="nav-link" href="#">
+        <div class="d-flex justify-content-center align-items-center flex-column">
+          <div class="icon-user"></div>
+          <div class="menu-text">User</div>
+        </div>
+      </a>
+    </li>
+    <li class="nav-item" routerLinkActive="active-menu" title="Roles">
+      <a class="nav-link" [routerLink]="['roles']">
+        <div class="d-flex justify-content-center align-items-center flex-column">
+          <div class="icon-roles"></div>
+          <div class="menu-text">Roles</div>
+        </div>
+      </a>
+    </li>
+    <li class="nav-item" routerLinkActive="active-menu" title="Claim Types">
+      <a class="nav-link" [routerLink]="['claims']">
+        <div class="d-flex justify-content-center align-items-center flex-column">
+          <div class="icon-claim-types"></div>
+          <div class="menu-text">Claim types</div>
+        </div>
+      </a>
+    </li>
+    <li class="nav-item" routerLinkActive="active-menu" title="Clients">
+      <a class="nav-link" href="#">
+        <div class="d-flex justify-content-center align-items-center flex-column">
+          <div class="icon-clients"></div>
+          <div class="menu-text">Clients</div>
+        </div>
+      </a>
+    </li>
+    <li class="nav-item" routerLinkActive="active-menu" title="Identity Resources">
+      <a class="nav-link" [routerLink]="['identity-resources']">
+        <div class="d-flex justify-content-center align-items-center flex-column">
+          <div class="icon-identity-resources"></div>
+          <div class="menu-text">identity resources</div>
+        </div>
+      </a>
+    </li>
+    <li class="nav-item" routerLinkActive="active-menu" title="Protected Resources">
+      <a class="nav-link"  [routerLink]="['protected-resources']">
+        <div class="d-flex justify-content-center align-items-center flex-column">
+          <div class="icon-protected-resources"></div>
+          <div class="menu-text">Protected resources</div>
+        </div>
+      </a>
+    </li>
+  </ul>
+</nav>

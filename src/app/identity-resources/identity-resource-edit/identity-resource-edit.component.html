@@ -1,0 +1,136 @@
+<form [formGroup]="identityResourceForm" (ngSubmit)="updateIdentityResource()">
+  <section class="middle-container">
+    <section class="tab-right-container">
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" href="#details" title="Details">Details</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#resources" title="Resources">Resources</a>
+        </li>
+      </ul>
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div id="details" class="tab-pane active">
+          <div class="d-flex">
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12 no-padding form-p-r">
+              <div class="head-text">
+                Display Name
+                <span class="icon-qun"></span>
+              </div>
+              <div>
+                <input type="text" formControlName="DisplayName" class="form-input" placeholder="Your user identifier">
+              </div>
+              <div class="head-text m-t15px">
+                Description
+                <span class="icon-qun"></span>
+              </div>
+              <div>
+                <textarea formControlName="Description" id="" class="identity-textarea"></textarea>
+              </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12 no-padding form-p-r m-t35px">
+              <div class="light-bg-background">
+                <div class="content-center-text">
+                  Consent to use resource is required to complete authentication
+                </div>
+                <div class="d-flex justify-content-center m-t15px">
+                  <label for="user1" class="label-text">Required</label>
+                  <input type="checkbox" formControlName="Required" class="black-checkbox" name="user" id="user1">
+                  <label for="user1"></label>
+                </div>
+              </div>
+              <div class="light-bg-background">
+                <div class="content-center-text">
+                  Resource appears within Discovery Document (/.well-know/openid-configuration)
+                </div>
+                <div class="d-flex justify-content-center m-t15px">
+                  <label for="user2" class="label-text">Show in Discovery Document </label>
+                  <input type="checkbox" formControlName="ShowInDiscoveryDocument" class="black-checkbox" name="user" id="user2">
+                  <label for="user2"> </label>
+                </div>
+              </div>
+              <div class="light-bg-background">
+                <div class="content-center-text">
+                  Emphasize resource name on conset screen
+                </div>
+                <div class="d-flex justify-content-center m-t15px">
+                  <label for="user3" class="label-text">Emphasize </label>
+                  <input type="checkbox" formControlName="Emphasize" class="black-checkbox" name="user" id="user3">
+                  <label for="user3"> </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="resources" class="tab-pane">
+          <div class="head-text15px">
+            User claim types to be include in tokens
+          </div>
+          <div class="d-flex justify-content-between flex-wrap m-t15px">
+            <div class="frm-checkbox">
+              <div class="box-head-text">Assigned</div>
+              <div class="container-checkbox" formArrayName="IdentityClaims">
+                <div *ngFor="let identityClaim of identityResourceForm.get('IdentityClaims').controls" [formGroup]="identityClaim">
+                  <input type="checkbox" formControlName="Checked" class="blue-checkbox" [name]="identityClaim.get('Type').value" [id]="identityClaim.get('Type').value">
+                  <label [for]="identityClaim.get('Type').value">{{ identityClaim.get('Type').value }}</label>
+                </div>
+              </div>
+            </div>
+            <div class="d-flex justify-content-center align-items-center flex-column btn-tab-center">
+              <div class="btn-container d-flex justify-content-center">
+                <div class="icon-btn-prev"></div>
+              </div>
+              <div class="btn-container d-flex justify-content-center">
+                <div class="icon-btn-next"></div>
+              </div>
+            </div>
+            <div class="frm-checkbox">
+              <div class="box-head-text">Available</div>
+              <div class="container-checkbox">
+                <div>
+                  <input type="checkbox" class="blue-checkbox" name="user" id="user11">
+                  <label for="user11">Email</label>
+                </div>
+                <div>
+                  <input type="checkbox" class="blue-checkbox" name="user" id="user12">
+                  <label for="user12">Phone_number_verified</label>
+                </div>
+                <div>
+                  <input type="checkbox" class="blue-checkbox" name="user" id="user13">
+                  <label for="user13">Email_verified</label>
+                </div>
+                <div>
+                  <input type="checkbox" class="blue-checkbox" name="user" id="user14">
+                  <label for="user14">
+                    Test
+                  </label>
+                  <span class="gray-text-hide flex-column d-flex">Test description 123</span>
+                </div>
+                <div>
+                  <input type="checkbox" class="blue-checkbox" name="user" id="user15">
+                  <label for="user15">Sub</label>
+                </div>
+                <div>
+                  <input type="checkbox" class="blue-checkbox" name="user" id="user16">
+                  <label for="user16">Phone_number</label>
+                </div>
+                <div>
+                  <input type="checkbox" class="blue-checkbox" name="user" id="user17">
+                  <label for="user17">Middle_name</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+  <footer class="footer-container">
+    <section class="footer-btn-container d-flex justify-content-between">
+      <button type="button" class="btn-pink" title="Delete">delete</button>
+      <button type="submit" class="btn-green" title="Save">save</button>
+    </section>
+  </footer>
+</form>

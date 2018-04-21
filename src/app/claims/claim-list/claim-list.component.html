@@ -1,0 +1,26 @@
+
+<div class="border-bottom-container position-relative">
+    <span class="icon-search"></span>
+    <input type="search" [(ngModel)]="searchText" class="search-input" placeholder="Search...">
+  </div>
+  <div class="relative-container">
+    <div class="absolute-container">
+      <div class="left-container-border" [ngClass]="{'container-active':activeClaimId==claim.Id}" *ngFor="let claim of filteredClaims"
+        (click)="selectClaim(claim)">
+        <div class="d-flex p-l20px">
+          <div class="d-flex align-items-center justify-content-center icon-container">
+            <div class="icon-connection-manager"></div>
+          </div>
+          <div class="d-flex flex-column text-container">
+            <div class="black-text16px">{{claim.Name}}</div>
+            <div class="black-text12px">{{claim.Description}}</div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="filteredClaims?.length===0">
+        <div class="card justify-content-center align-items-center">
+          There are no claims found.
+        </div>
+    </div>
+  </div>
+  </div>

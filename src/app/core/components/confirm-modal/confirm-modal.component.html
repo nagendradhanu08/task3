@@ -1,0 +1,7 @@
+<form *ngIf="active">
+    <div class="modal-body text-center">
+        <p>{{body}}</p>
+        <button type="button" class="btn btn-default" (click)="onConfirm()">Yes</button>
+        <button type="button" class="btn btn-primary" (click)="onCancel()">No</button>
+    </div>
+</form>

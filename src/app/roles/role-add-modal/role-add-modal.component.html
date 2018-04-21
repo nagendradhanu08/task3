@@ -1,0 +1,24 @@
+<form class="role-popup-box" [formGroup]="roleForm" (ngSubmit)="addRole()">
+  <div class="modal-header">
+    <h4 class="modal-title">New Role</h4>
+    <button type="button" class="close" data-dismiss="modal" title="Close" (click)="modalRef.hide()">&times;</button>
+  </div>
+  <div class="modal-body">
+    <div class="head-text">
+      Name
+    </div>
+    <div>
+      <input type="text" formControlName="Name" class="form-input">
+    </div>
+    <div class="head-text m-t15px">
+      Description
+    </div>
+    <div>
+      <textarea id="" formControlName="Description" class="form-textarea"></textarea>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" (click)="cancelAdd();modalRef.hide()" class="btn-popup-transparent" data-dismiss="modal" title="Cancel">Cancel</button>
+    <button type="submit" class="btn-green" title="Add">Add</button>
+  </div>
+</form>

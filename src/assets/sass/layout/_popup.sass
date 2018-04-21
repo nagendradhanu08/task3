@@ -1,0 +1,217 @@
+.role-popup-box
+  .modal-header
+    padding: 15px 15px 10px 15px
+    border-bottom: 1px solid $clr-border
+    h4
+      font-size: 18px
+      font-family: poppinssemibold
+      color: $clr-dark-blue1
+  .modal-body
+    padding: 20px 25px
+  .modal-footer
+    border-top: 1px solid $clr-border
+  .close
+    color: $clr-dark-blue1
+    font-size: 25px
+    opacity: 1
+  .head-text
+    font-size: 14px
+  .form-p-l
+    padding-left: 7px
+  .form-p-r
+    padding-right: 7px
+  .form-textarea
+    min-height: 195px
+  .btn-green
+    padding: 5px 20px
+    min-width: 100px
+
+.identity-resource-popup-box
+  .modal-dialog
+    max-width: 850px
+  .modal-content
+    min-height: 650px
+  .modal-footer
+    background-color: $clr-light1
+    border-top: none
+  .timeline-container
+    padding: 10px 0 10px 35px
+  .timeline-white-text
+    font-size: 12px
+    font-family: poppinsmedium
+    color: $clr-white
+    position: relative
+    margin: 10px 0 0 -109px
+    left: 50px
+    right: 0
+    text-align: center
+  .modal-header
+    padding: 10px 10px
+    background-color: $clr-blue
+    min-height: 100px
+    h4
+      font-size: 20px
+      color: $clr-white
+      font-family: poppinsmedium
+      text-align: center
+    .h4-white-text
+      font-size: 20px
+      color: $clr-white
+      font-family: poppinsmedium
+      text-align: center
+    .close-white
+      color: $clr-white !important
+  .close
+    color: $clr-white
+    font-size: 25px
+    opacity: 1
+  .line-blue
+    background-color: $clr-dark-blue2
+    min-width: 150px
+    height: 3px
+    margin: 6px 0 0 -3px
+  .line-white
+    @extend .line-blue
+    background-color: $clr-white
+  .display-cell
+    display: table-cell
+  .body-head-text
+    font-size: 18px
+    font-family: poppinsmedium
+    color: $clr-dark-blue1
+    border-bottom: 1px solid $clr-border
+    padding-bottom: 10px
+  .body-small-text
+    font-size: 13px
+    color: $clr-dark-blue1
+    font-family: poppinsmedium
+
+  .form-textarea
+    min-height: 137px
+  .btn-pink
+    padding: 5px 20px
+  .btn-gray
+    padding: 5px 20px
+    min-width: 100px
+  .btn-green
+    padding: 5px 20px
+    min-width: 100px
+  .frm-checkbox
+    min-width: 325px
+  .border-bottom-container
+    padding: 10px 10px
+  .icon-search
+    left: 20px
+    top: 18px
+  .container-checkbox.left-container
+    height: 250px
+
+.role-popup-box
+  .modal-dialog
+    max-width: 700px
+  .client-popup-box
+    .modal-header
+      border-bottom: none
+      h4
+        text-align: center
+        width: 100%
+        padding-top: 20px
+        font-size: 25px
+        color: $clr-dark-blue1
+        font-family: poppinsmedium
+    .header-small-text
+      font-family: poppinsregular
+      font-size: 16px
+      padding-top: 10px
+      color: $clr-dark-blue1
+    .close
+      color: $clr-gray
+      font-size: 25px
+      opacity: 1
+    .modal-dialog
+      max-width: 950px
+    .box-container
+      width: 245px
+      margin-bottom: 15px
+      +border-radius(4px, 4px, 4px, 4px)
+      border: 1px solid $clr-border
+      background-color: $clr-light5
+      padding: 40px 15px
+      min-height: 332px
+      &:hover
+        border: 1px solid $clr-blue
+        background-color: $clr-light6
+        & .button-hover
+            display: block
+    .box-big-text
+      font-size: 16px
+      color: $clr-dark-blue1
+      font-family: poppinssemibold
+      text-align: center
+      padding: 20px 0 15px 0
+    .box-small-text
+      font-size: 12px
+      font-family: poppinsmedium
+      text-align: center
+      color: $clr-dark-blue1
+      padding: 20px 0 0 0
+    .separator-blue
+      width: 60px
+      height: 3px
+      background-color: $clr-blue
+      margin: 0 auto
+    .button-hover
+      display: none
+      margin-top: 20px
+
+.popup-table
+  height: 25em
+  table
+    display: flex
+    flex-flow: column
+    height: 100%
+    width: 100%
+    border: 1px solid $clr-border
+    margin: 15px 0 0 0
+    +border-radius(4px, 4px, 4px, 4px)
+  table thead
+    flex: 0 0 auto
+    width: calc(100% - 17px)
+    tr
+      border-bottom: 1px solid $clr-border
+    th
+      padding: 10px 15px
+      color: $clr-dark-blue1
+      font-family: poppinssemibold
+      font-size: 16px
+      &:nth-child(1)
+        width: 200px
+      &:nth-child(3)
+        width: 70px
+  table tbody
+    flex: 1 1 auto
+    display: block
+    overflow-y: scroll
+  table tbody tr
+    width: 100%
+    border-bottom: 1px solid $clr-border
+    &:nth-child(odd)
+      background-color: $clr-light5
+    &:nth-child(even)
+      background-color: $clr-white
+    &:last-child
+      border-bottom: none
+    td
+      padding: 10px 15px
+      font-size: 13px
+      font-family: poppinsmedium
+      color: $clr-gray
+      text-transform: capitalize
+      &:nth-child(1)
+        width: 200px
+      &:nth-child(3)
+        width: 70px
+  table thead,
+  table tbody tr
+    display: table
+    table-layout: fixed

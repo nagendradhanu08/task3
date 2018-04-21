@@ -1,0 +1,338 @@
+<form [formGroup]="protectedResourceForm" (ngSubmit)="updateProtectedResource()">
+    <section class="middle-container">
+        <section class="tab-right-container">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="tab" href="#details" title="Details">Details</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#scopes" title="Scopes">Scopes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#claims" title="Claims">Claims</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#secrets" title="Secrets">Secrets</a>
+                </li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div id="details" class="tab-pane active">
+                    <div class="head-text">
+                        Display Name
+                        <span class="icon-qun"></span>
+                    </div>
+                    <div>
+                        <input type="text" formControlName="DisplayName" value="" class="form-input" placeholder="Your user identifier">
+                    </div>
+                    <div class="head-text m-t15px">
+                        Description
+                        <span class="icon-qun"></span>
+                    </div>
+                    <div>
+                        <textarea formControlName="Description" id="" class="form-textarea">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</textarea>
+                    </div>
+                </div>
+                <div id="scopes" class="tab-pane fade">
+                    <div class="d-flex justify-content-end">
+                        <button title="Add Scope" type="button" class="btn-green">Add Scope</button>
+                    </div>
+                    <div class="accordion-container">
+                        <div id="accordion">
+                            <div class="card" *ngFor="let protected of ApiScopes">
+                                <a class="card-link" data-toggle="collapse" href="#collapseOne">
+                                    <div class="d-flex justify-content-between">
+                                        <div class="card-header w-100">
+                                            admin_api1
+                                        </div>
+                                        <div class="icon-tab-delete">
+                                            <span class="icon-delete" title="Delete"></span>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                                    <div class="card-body">
+                                        <div class="protected-resources-tab">
+                                            <ul class="nav nav-tabs" role="tablist">
+                                                <li class="nav-item">
+                                                    <a class="nav-link active" href="#protected-details" role="tab" data-toggle="tab">Details</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#protected-claims" role="tab" data-toggle="tab">Claims</a>
+                                                </li>
+                                            </ul>
+                                            <div class="tab-content">
+                                                <div role="tabpanel" class="tab-pane active" id="protected-details">
+                                                    <div class="d-flex flex-wrap">
+                                                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12 no-padding form-p-r">
+                                                            <div class="head-text">
+                                                                Display Name
+                                                                <span class="icon-qun"></span>
+                                                            </div>
+                                                            <div>
+                                                                <input type="text" formControlName="DisplayName" value="" class="form-input" placeholder="Your user identifier">
+                                                            </div>
+                                                            <div class="head-text m-t15px">
+                                                                Description
+                                                                <span class="icon-qun"></span>
+                                                            </div>
+                                                            <div>
+                                                                <textarea formControlName="Description" id="" class="identity-textarea">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12 no-padding form-p-r m-t35px">
+                                                            <div class="light-bg-background">
+                                                                <div class="content-center-text">
+                                                                    Consent to use resource is required to complete authentication
+                                                                </div>
+                                                                <div class="d-flex justify-content-center m-t15px">
+                                                                    <label for="user1" class="label-text">Required</label>
+                                                                    <input type="checkbox" formControlName="Required" class="black-checkbox" name="user" id="user1">
+                                                                    <label for="user1"></label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="light-bg-background">
+                                                                <div class="content-center-text">
+                                                                    Resource appears within Discovery Document (/.well-know/openid-configuration)
+                                                                </div>
+                                                                <div class="d-flex justify-content-center m-t15px">
+                                                                    <label for="user2" class="label-text">Show in Discovery Document </label>
+                                                                    <input type="checkbox" formControlName="ShowInDiscoveryDocument" class="black-checkbox" name="user" id="user2">
+                                                                    <label for="user2"> </label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="light-bg-background">
+                                                                <div class="content-center-text">
+                                                                    Emphasize resource name on conset screen
+                                                                </div>
+                                                                <div class="d-flex justify-content-center m-t15px">
+                                                                    <label for="user3" class="label-text">Emphasize </label>
+                                                                    <input type="checkbox" formControlName="Emphasize" class="black-checkbox" name="user" id="user3">
+                                                                    <label for="user3"> </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div role="tabpanel" class="tab-pane fade" id="protected-claims">
+                                                    <div class="head-text15px">
+                                                        User claim types to be include in tokens
+                                                    </div>
+                                                    <div class="d-flex justify-content-between flex-wrap m-t15px">
+                                                        <div class="frm-checkbox">
+                                                            <div class="box-head-text">Assigned</div>
+                                                            <div class="container-checkbox">
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="d-flex justify-content-center align-items-center flex-column btn-tab-center">
+                                                            <div class="btn-container d-flex justify-content-center">
+                                                                <div class="icon-btn-prev"></div>
+                                                            </div>
+                                                            <div class="btn-container d-flex justify-content-center">
+                                                                <div class="icon-btn-next"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="frm-checkbox">
+                                                            <div class="box-head-text">Available</div>
+                                                            <div class="border-bottom-container position-relative">
+                                                                <span class="icon-search"></span>
+                                                                <input type="search" class="search-input" placeholder="Search...">
+                                                            </div>
+                                                            <div class="container-checkbox left-container">
+                                                                <div>
+                                                                    <input type="checkbox" class="blue-checkbox" name="user" id="user11">
+                                                                    <label for="user11">Nickname</label>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="checkbox" class="blue-checkbox" name="user" id="user13">
+                                                                    <label for="user13">Zoneinfo</label>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="checkbox" class="blue-checkbox" name="user" id="user14">
+                                                                    <label for="user14">
+                                                                        Family_name
+                                                                    </label>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="checkbox" class="blue-checkbox" name="user" id="user15">
+                                                                    <label for="user15">Gender</label>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="checkbox" class="blue-checkbox" name="user" id="user16">
+                                                                    <label for="user16">Phone_number_verified</label>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="checkbox" class="blue-checkbox" name="user" id="user17">
+                                                                    <label for="user17">Birthdate</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="claims" class="tab-pane fade">
+                    <div class="head-text15px">
+                        User claim types to be include in tokens
+                    </div>
+                    <div class="d-flex justify-content-between flex-wrap m-t15px">
+                        <div class="frm-checkbox">
+                            <div class="box-head-text">Assigned</div>
+                            <div class="container-checkbox">
+                                <div>
+                                    <input type="checkbox" class="blue-checkbox" name="user" id="user4">
+                                    <label for="user4">Name</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" class="blue-checkbox" name="user" id="user5">
+                                    <label for="user5">Local</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" class="blue-checkbox" name="user" id="user6">
+                                    <label for="user6">Zoneinfo</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" class="blue-checkbox" name="user" id="user7">
+                                    <label for="user7">Birthdate</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" class="blue-checkbox" name="user" id="user8">
+                                    <label for="user8">Family_name</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" class="blue-checkbox" name="user" id="user9">
+                                    <label for="user9">Website</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" class="blue-checkbox" name="user" id="user10">
+                                    <label for="user10">Picture</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" class="blue-checkbox" name="user" id="user18">
+                                    <label for="user18">Profile</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center align-items-center flex-column btn-tab-center">
+                            <div class="btn-container d-flex justify-content-center">
+                                <div class="icon-btn-prev"></div>
+                            </div>
+                            <div class="btn-container d-flex justify-content-center">
+                                <div class="icon-btn-next"></div>
+                            </div>
+                        </div>
+                        <div class="frm-checkbox">
+                            <div class="box-head-text">Available</div>
+                            <div class="container-checkbox">
+                                <div>
+                                    <input type="checkbox" class="blue-checkbox" name="user" id="user11">
+                                    <label for="user11">Email</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" class="blue-checkbox" name="user" id="user12">
+                                    <label for="user12">Phone_number_verified</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" class="blue-checkbox" name="user" id="user13">
+                                    <label for="user13">Email_verified</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" class="blue-checkbox" name="user" id="user14">
+                                    <label for="user14">
+                                        Test
+                                    </label>
+                                    <span class="gray-text-hide flex-column d-flex">Test description 123</span>
+                                </div>
+                                <div>
+                                    <input type="checkbox" class="blue-checkbox" name="user" id="user15">
+                                    <label for="user15">Sub</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" class="blue-checkbox" name="user" id="user16">
+                                    <label for="user16">Phone_number</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" class="blue-checkbox" name="user" id="user17">
+                                    <label for="user17">Middle_name</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="secrets" class="tab-pane fade">
+                    <div class="d-flex flex-wrap" [formGroup]="newApisecrets">
+                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12 no-padding form-p-r">
+                            <div class="head-text">
+                                Type
+                                <span class="icon-qun"></span>
+                            </div>
+                            <div>
+                                <input type="number"  formControlName="Type"  class="form-input" placeholder="123">
+                            </div>
+                            <div class="head-text m-t15px">
+                                Value
+                                <span class="icon-qun"></span>
+                            </div>
+                            <div>
+                                <input type="text" formControlName="Value"   class="form-input" placeholder="123">
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12 no-padding form-p-l tab-pt">
+                            <div class="head-text">
+                                Description
+                            </div>
+                            <div>
+                                <textarea id=""  formControlName="Description" class="client-textarea">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-end m-t10px m-b10px">
+                        <button type="button" class="btn-green" title="Add" data-toggle="modal" data-target="#protectedresource2" (click)="saveSecret()">Add</button>
+                    </div>
+                    <div class="protected-table">
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Value</th>
+                                    <th>Description</th>
+                                    <th>Expiration</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let secret of ApiSecrets">
+                                    <td>{{secret.Type}}</td>
+                                    <td>{{secret.Value}}</td>
+                                    <td>{{secret.Description}}</td>
+                                    <td>
+                                        {{secret.Expiration}}
+                                    </td>
+                                    <td align="center" valign="middle">
+                                        <a href="javascript:void(0)">
+                                            <div class="icon-delete" (click)="deleteApiSecrets(secret.ApiResourceId)" title="Delete"></div>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+    <footer class="footer-container">
+        <section class="footer-btn-container d-flex justify-content-between">
+            <button type="button" class="btn-pink" title="Delete" (click)="deleteProtectedResource()" >delete</button>
+            <button type="submit" class="btn-green" title="Save">save</button>
+        </section>
+    </footer>
+</form>

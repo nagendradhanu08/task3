@@ -1,0 +1,25 @@
+<div class="border-bottom-container position-relative">
+  <span class="icon-search"></span>
+  <input type="search" [(ngModel)]="searchText" class="search-input" placeholder="Search...">
+</div>
+<div class="relative-container">
+  <div class="absolute-container">
+    <div class="left-container-border" [ngClass]="{'container-active':activeRoleId==role.Id}" *ngFor="let role of filteredRoles"
+      (click)="selectRole(role)">
+      <div class="d-flex p-l20px">
+        <div class="d-flex align-items-center justify-content-center icon-container">
+          <div class="icon-connection-manager"></div>
+        </div>
+        <div class="d-flex flex-column text-container">
+          <div class="black-text16px">{{role.Name}}</div>
+          <div class="black-text12px">{{role.Description}}</div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="filteredRoles?.length===0">
+      <div class="card justify-content-center align-items-center">
+        There are no roles found.
+      </div>
+  </div>
+</div>
+</div>

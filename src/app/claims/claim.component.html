@@ -1,0 +1,41 @@
+<!-- MAIN COMPONENT STARTS  -->
+<section class="d-flex h-100">
+
+  <!--white container start here-->
+  <section class="white-left-container">
+    <!-- Add new Claim Button starts-->
+    <div class="d-flex justify-content-center border-bottom-container">
+      <button type="button" title="Add Claim" (click)="showModal()" class="btn-transparent">New Claim</button>
+    </div>
+    <!-- Add new Claim Button ends -->
+
+    <!-- List Component start -->
+    <authority-claim-list #claimList (selectedClaim)="claimEdit.onClaimSelect($event)"></authority-claim-list>
+    <!-- List component ends -->
+  </section>
+  <!--white container end here-->
+
+  <!-- gray container starts here -->
+  <section class="right-container w-100">
+
+    <!-- Breadcrumb starts -->
+    <header>
+      <div class="header-text">{{ claimEdit.claim?.Name }}</div>
+      
+      <ul class="breadcrumb">
+        <li>
+          <a>Claims</a>
+        </li>
+        <li class="active-item">
+          <a>Edit</a>
+        </li>
+      </ul>
+    </header>
+    <!-- Breadcrumb ends -->
+
+    <authority-claim-edit #claimEdit (updatedClaim)="claimList.onClaimUpdate($event)" (deletedClaim)="claimList.onClaimDelete($event)"></authority-claim-edit>
+  </section>
+  <!-- gray container ends here -->
+
+</section>
+<!-- MAIN COMPONENT ENDS -->
